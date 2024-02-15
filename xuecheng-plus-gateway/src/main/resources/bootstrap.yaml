@@ -1,22 +1,19 @@
 #微服务配置
 spring:
   application:
-    name: content-api
+    name: gateway
   cloud:
     nacos:
       server-addr: 192.168.101.65:8848
-      discovery: # 注册
+      discovery:
         namespace: f9d900e8-c1df-44bc-a157-fed38d72a223
         group: xuecheng-plus-project
-      config:  # 配置
+      config:
         namespace: f9d900e8-c1df-44bc-a157-fed38d72a223
         group: xuecheng-plus-project
         file-extension: yaml
         refresh-enabled: true
         shared-configs:
-          - data-id: swagger-${spring.profiles.active}.yaml
-            group: xuecheng-plus-common
-            refresh: true
           - data-id: logging-${spring.profiles.active}.yaml
             group: xuecheng-plus-common
             refresh: true
